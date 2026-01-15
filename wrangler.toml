@@ -1,0 +1,21 @@
+# Wrangler configuration for Zonemon Coming Soon page
+# Cloudflare Pages deployment configuration
+
+name = "zonemon-splash"
+compatibility_date = "2024-01-01"
+
+# Pages configuration
+pages_build_output_dir = "."
+
+# Custom domain configuration (update after Cloudflare Pages project is created)
+# route = { pattern = "zonemon.com", custom_domain = true }
+# route = { pattern = "www.zonemon.com", custom_domain = true }
+
+# Environment variables (if needed)
+# [env.production]
+# [env.production.vars]
+# API_URL = "https://api.zonemon.com"
+
+# Development configuration
+[env.development]
+# Add development-specific configuration here if needed

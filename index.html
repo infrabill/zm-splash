@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zonemon - Coming Soon | Domain Protection & Typosquatting Monitoring</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Zonemon is launching soon. Protect your brand from typo-squatters and manage DNS without buying hundreds of defensive domains. Real security, not domain hoarding.">
+    <meta name="keywords" content="domain protection, typosquatting, DNS security, brand protection, cybersecurity">
+    <meta name="author" content="Zonemon">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zonemon.com/">
+    <meta property="og:title" content="Zonemon - Coming Soon | Domain Protection & Typosquatting Monitoring">
+    <meta property="og:description" content="Stop typo-squatters and manage your DNS without buying hundreds of defensive domains or paying enterprise prices.">
+    <meta property="og:image" content="https://zonemon.com/assets/logo.svg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://zonemon.com/">
+    <meta property="twitter:title" content="Zonemon - Coming Soon | Domain Protection & Typosquatting Monitoring">
+    <meta property="twitter:description" content="Stop typo-squatters and manage your DNS without buying hundreds of defensive domains or paying enterprise prices.">
+    <meta property="twitter:image" content="https://zonemon.com/assets/logo.svg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+
+    <!-- Preload fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <!-- Background gradient overlay -->
+    <div class="background-overlay"></div>
+
+    <!-- Dashboard mockup background -->
+    <div class="dashboard-background"></div>
+
+    <main class="container">
+        <div class="content">
+            <!-- Logo -->
+            <div class="logo-container">
+                <img src="/assets/logo.svg" alt="Zonemon Logo" class="logo">
+            </div>
+
+            <!-- Main content -->
+            <h1 class="heading">
+                <span class="heading-main">Coming Soon</span>
+                <span class="heading-brand">Zonemon</span>
+            </h1>
+
+            <p class="tagline">
+                Domain Protection That Actually Makes Sense
+            </p>
+
+            <p class="description">
+                Stop typo-squatters and manage your DNS without buying hundreds of defensive domains or paying enterprise prices. Real security, not domain hoarding.
+            </p>
+
+            <!-- CTA section -->
+            <div class="cta-container">
+                <p class="cta-text">
+                    Launching early 2026. Stay tuned for updates.
+                </p>
+            </div>
+
+            <!-- Features badges -->
+            <div class="features">
+                <div class="feature-badge">
+                    <svg class="feature-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 2L3 6V10C3 14 5.5 17.5 10 19C14.5 17.5 17 14 17 10V6L10 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Typosquatting Detection</span>
+                </div>
+                <div class="feature-badge">
+                    <svg class="feature-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="10" cy="10" r="3" fill="currentColor"/>
+                    </svg>
+                    <span>DNS Monitoring</span>
+                </div>
+                <div class="feature-badge">
+                    <svg class="feature-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 10H16M10 4V16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>Real-time Alerts</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 Zonemon. All rights reserved.</p>
+        </footer>
+    </main>
+
+    <!-- Subtle animation script -->
+    <script>
+        // Add entrance animation on load
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('loaded');
+
+            // Animate logo with slight delay
+            setTimeout(function() {
+                document.querySelector('.logo-container').classList.add('animate');
+            }, 200);
+
+            // Animate content with staggered delay
+            setTimeout(function() {
+                document.querySelector('.content').classList.add('animate');
+            }, 400);
+        });
+
+        // Add parallax effect to background on scroll (subtle)
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    const scrolled = window.pageYOffset;
+                    const bg = document.querySelector('.dashboard-background');
+                    if (bg) {
+                        bg.style.transform = 'translateY(' + (scrolled * 0.3) + 'px)';
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    </script>
+</body>
+</html>
