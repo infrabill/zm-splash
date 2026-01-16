@@ -18,6 +18,9 @@ This is a single-page static site designed to be lightweight, fast, and professi
 
 ```
 zm-splash/
+├── .github/
+│   └── workflows/
+│       └── deploy.yml  # GitHub Actions deployment workflow
 ├── index.html          # Main HTML file
 ├── styles.css          # All styles (Mantine-inspired)
 ├── wrangler.toml       # Cloudflare Pages configuration
@@ -102,17 +105,56 @@ wrangler pages deploy . --project-name=zonemon-splash
 # Follow the prompts to complete deployment
 ```
 
-### Method 3: Git Integration (Best for continuous deployment)
+### Method 3: GitHub Actions (Recommended - Automatic CI/CD)
 
-1. Create a new GitHub repository for the splash page
-2. Push the `zm-splash` directory to GitHub
-3. In Cloudflare Pages, choose **Connect to Git**
-4. Select the repository
-5. Configure build settings:
+This repo includes a GitHub Actions workflow for automatic deployment to Cloudflare Pages.
+
+#### Initial Setup (One-time)
+
+1. **Create the Cloudflare Pages project:**
+   ```bash
+   # Option A: Via Cloudflare Dashboard
+   # Go to https://dash.cloudflare.com/ → Pages → Create project → Direct Upload
+   # Upload the repo contents and name it "zonemon-splash"
+
+   # Option B: Via Wrangler CLI (requires Node.js 20+)
+   wrangler pages project create zonemon-splash
+   ```
+
+2. **Get your Cloudflare credentials:**
+   - **Account ID**: Found in Cloudflare Dashboard → right sidebar → "Account ID"
+   - **API Token**: Create at https://dash.cloudflare.com/profile/api-tokens
+     - Use template "Edit Cloudflare Workers" OR create custom with:
+       - Account → Cloudflare Pages → Edit
+       - Account → Account Settings → Read
+       - User → User Details → Read
+
+3. **Add GitHub Secrets:**
+   ```bash
+   # Via GitHub CLI
+   gh secret set CLOUDFLARE_API_TOKEN --repo infrabill/zm-splash
+   gh secret set CLOUDFLARE_ACCOUNT_ID --repo infrabill/zm-splash
+
+   # Or via GitHub web UI:
+   # Settings → Secrets and variables → Actions → New repository secret
+   ```
+
+4. **Push to trigger deployment:**
+   ```bash
+   git push origin main
+   ```
+
+The workflow (`.github/workflows/deploy.yml`) will automatically deploy on every push to `main`.
+
+### Method 4: Cloudflare Git Integration (Alternative)
+
+1. In Cloudflare Pages, choose **Connect to Git**
+2. Select the `infrabill/zm-splash` repository
+3. Configure build settings:
    - **Build command**: Leave empty (static site)
    - **Build output directory**: `/`
    - **Root directory**: `/`
-6. Click **Save and Deploy**
+4. Click **Save and Deploy**
 
 ## Custom Domain Setup
 
