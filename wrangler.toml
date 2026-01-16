@@ -16,6 +16,6 @@ pages_build_output_dir = "."
 # [env.production.vars]
 # API_URL = "https://api.zonemon.com"
 
-# Development configuration
-[env.development]
-# Add development-specific configuration here if needed
+# Preview environment (for PR deployments)
+# [env.preview]
+# Add preview-specific configuration here if needed
